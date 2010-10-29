@@ -1,0 +1,29 @@
+<h1>Listing animes</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Genero</th>
+    <th>Descripcion</th>
+    <th>Capitulos</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @animes.each do |anime| %>
+  <tr>
+    <td><%= anime.nombre %></td>
+    <td><%= anime.genero %></td>
+    <td><%= anime.descripcion %></td>
+    <td><%= anime.capitulos %></td>
+    <td><%= link_to 'Show', anime %></td>
+    <td><%= link_to 'Edit', edit_anime_path(anime) %></td>
+    <td><%= link_to 'Destroy', anime, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Anime', new_anime_path %>
